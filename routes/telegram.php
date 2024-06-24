@@ -12,7 +12,7 @@ use SergiX44\Nutgram\Nutgram;
 | handlers are loaded by the NutgramServiceProvider. Enjoy!
 |
 */
-
+$bot->middleware(\App\Telegram\Middleware\MyMiddleware::class);
 $bot->onCommand('start', function (Nutgram $bot) {
     $bot->sendMessage('Hello, world!');
 })->description('The start command!');
