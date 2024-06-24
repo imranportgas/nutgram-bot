@@ -13,6 +13,4 @@ use SergiX44\Nutgram\Nutgram;
 |
 */
 $bot->middleware(\App\Telegram\Middleware\MyMiddleware::class);
-$bot->onCommand('start', function (Nutgram $bot) {
-    $bot->sendMessage('Hello, world!');
-})->description('The start command!');
+$bot->onCommand('start', [\App\Telegram\Handlers\MainHandler::class, 'start']);
