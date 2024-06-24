@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Telegram\Handlers\Keyboard;
+use Illuminate\Validation\Rules\In;
 use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
 use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardMarkup;
 
@@ -9,6 +10,9 @@ class MenuKeyboard
     public function createKeyboard(): InlineKeyboardMarkup
     {
         $keyboard = InlineKeyboardMarkup::make(); // Клавиатура для меню!
+        $keyboard ->addRow(
+            InlineKeyboardButton::make('Смотреть анкеты', callback_data: 'viewPerson')
+        );
 
         $keyboard->addRow( //Первый ряд клавиатуры!
             InlineKeyboardButton::make('Посмотреть профиль', callback_data: 'viewProfile'),

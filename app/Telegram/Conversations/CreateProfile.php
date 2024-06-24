@@ -21,7 +21,7 @@ class CreateProfile extends Conversation
      */
     public function start(Nutgram $bot): void
     {
-        $bot->editMessageText('Введите свое имя:');
+        $bot->sendMessage('Введите свое имя:');
         $this->next('askFirstName');
     }
 
