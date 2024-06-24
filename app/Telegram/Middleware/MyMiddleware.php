@@ -24,7 +24,7 @@ class MyMiddleware
                 $username ?? null);
             //Передаем все данные в бд!
         }
-        $bot->sendMessage(" hello {$user}");
+//        $bot->sendMessage(" hello {$user}");
         $next($bot);
     }
 }

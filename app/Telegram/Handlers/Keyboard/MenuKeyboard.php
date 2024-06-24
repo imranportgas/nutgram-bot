@@ -21,5 +21,24 @@ class MenuKeyboard
 
     return $keyboard;
     }
+    public function createBack(): InlineKeyboardMarkup
+    {
+        $keyboard = InlineKeyboardMarkup::make();
+        $keyboard->addRow(
+            InlineKeyboardButton::make('Назад', callback_data: 'back')
 
+        );
+        return $keyboard;
+    }
+
+    public function createConfirm(): InlineKeyboardMarkup
+    {
+        $keyboard = InlineKeyboardMarkup::make();
+        $keyboard->addRow(
+            InlineKeyboardButton::make('Подтвердить',callback_data: 'confirmProfile'),
+            InlineKeyboardButton::make("Изменить", callback_data: 'editProfile')
+        );
+        return $keyboard;
+    }
 }
+
